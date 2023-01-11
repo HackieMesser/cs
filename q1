@@ -1,0 +1,7 @@
+SELECT
+COUNT(id_user),
+COUNT(id_ride),
+ride_city
+from data_analyst_rides_2023
+where dayofweek(RIDE_START_DATETIME) =6
+group by ride_city
