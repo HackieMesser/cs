@@ -1,0 +1,14 @@
+#problem
+WITH
+first_ride AS (
+SELECT
+id_user,
+max(ride_end_datetime) AS first_ride_datetime
+FROM rides
+GROUP BY id_user
+)
+SELECT
+DATE_TRUNC('month',first_ride_datetime::DATE) AS first_ride_month,
+COUNT(id_user)
+FROM first_ride
+ORDER BY first_ride_datetime
