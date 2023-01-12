@@ -12,3 +12,10 @@ DATE_TRUNC('month',first_ride_datetime::DATE) AS first_ride_month,
 COUNT(id_user)
 FROM first_ride
 ORDER BY first_ride_datetime
+
+
+
+SELECT
+count(ID_user) as user_count, month(min(RIDE_START_DATETIME)), month(RIDE_START_DATETIME)
+FROM data_analyst_rides_2023
+group by month(RIDE_START_DATETIME)
