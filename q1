@@ -8,4 +8,6 @@ WHERE
   dayofweek(RIDE_START_DATETIME) = 6
   AND week(RIDE_START_DATETIME) = 30
 GROUP BY
-  ride_city
+  ride_city;
+  
+  #lookup if semicolon is best practice
