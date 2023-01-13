@@ -12,3 +12,5 @@ Script 3: Use the data in the case study to create the following output using SQ
 
 
 select distinct ID_vehicle, avg(datediff(ride_end_datetime, ride_start_datetime)) as time from data_analyst_rides_2023 group by ID_vehicle
+
+select distinct ID_USER, avg(datediff(ride_end_datetime, ride_start_datetime)) as time from data_analyst_rides_2023 group by ID_USER
