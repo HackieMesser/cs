@@ -17,4 +17,5 @@ select distinct ID_USER, avg(datediff(ride_end_datetime, ride_start_datetime)) a
 
 #eliminates 1 time users
 select ID_USER, count(ID_RIDE) as "cride" from data_analyst_rides_2023 group by ID_USER having count(*) > 1 order by cride asc
+create table cride1 as select ID_USER, count(ID_RIDE) as "cride" from data_analyst_rides_2023 group by ID_USER having count(*) > 1 order by cride asc;
 
