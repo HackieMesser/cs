@@ -31,3 +31,7 @@ from data_analyst_rides_2023 group by ID_Vehicle order by CountVehicle asc
 
 select ID_USER, min(RIDE_END_DATETIME), max(RIDE_START_DATETIME)
 from multi_user1 group by ID_USER
+
+
+create table min_and_max_by_user as select ID_USER, min(RIDE_END_DATETIME), max(RIDE_START_DATETIME)
+from multi_user1 group by ID_USER
