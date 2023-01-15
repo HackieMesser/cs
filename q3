@@ -35,3 +35,10 @@ from multi_user1 group by ID_USER
 
 create table min_and_max_by_user as select ID_USER, min(RIDE_END_DATETIME), max(RIDE_START_DATETIME)
 from multi_user1 group by ID_USER
+
+
+create table min_and_max_by_user2 as select ID_USER, min(RIDE_END_DATETIME)as "min_end", max(RIDE_START_DATETIME) as "max_start"
+from multi_user1 group by ID_USER
+
+select min_max.ID_USER, min_max.min_end, min_max.max_start, cride.cride
+from min_and_max_by_user2 as min_max left join cride1 as cride on cride.ID_USER  = min_max.ID_USER 
