@@ -22,4 +22,6 @@ create table cride1 as select ID_USER, count(ID_RIDE) as "cride" from data_analy
 #adds cride to orginial and elimates the non-1 timers
 select * from cride1  left join data_analyst_rides_2023 on cride1.ID_USER = data_analyst_rides_2023.ID_USER order by cride asc
 #multi users only table
-create table multi_user1 as select cride, ID_RIDE, data_analyst_rides_2023.ID_user, RIDE_END_DATETIME, RIDE_start_DATETIME  from cride1  left join data_analyst_rides_2023 on cride1.ID_USER = data_analyst_rides_2023.ID_USER 
+create table multi_user1 as select cride, ID_RIDE, data_analyst_rides_2023.ID_user, RIDE_END_DATETIME, RIDE_start_DATETIME  
+from cride1  left join data_analyst_rides_2023 on cride1.ID_USER = data_analyst_rides_2023.ID_USER 
+#all vehicle have over 1 use
