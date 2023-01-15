@@ -28,3 +28,6 @@ from cride1  left join data_analyst_rides_2023 on cride1.ID_USER = data_analyst_
 #all vehicle have over 1 use
 select ID_Vehicle, count(ID_RIDE) as "CountVehicle" 
 from data_analyst_rides_2023 group by ID_Vehicle order by CountVehicle asc
+
+select ID_USER, min(RIDE_END_DATETIME), max(RIDE_START_DATETIME)
+from multi_user1 group by ID_USER
